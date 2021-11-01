@@ -9,7 +9,7 @@ generate_client_ruby:
 		-p moduleName=Petstore
 	@echo "ruby api client generated."
 
-generate_client_server:
+generate_server_ruby:
 	@docker run -v ${PWD}:/local -u $(id -u):$(id -g)\
 		openapitools/openapi-generator-cli:v5.2.0 generate \
 		-i /local/petstore.yaml \
