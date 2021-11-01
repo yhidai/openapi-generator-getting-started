@@ -1,0 +1,11 @@
+swagger-editor:
+  image: 'swaggerapi/swagger-editor:v3.13.0'
+  ports:
+    - 28080:8080
+  tty: true
+  stdin_open: true
+  volumes:
+    - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
+    - "./petstore.yaml:/tmp/petstore.yaml"
+  environment:
+    - "SWAGGER_FILE=/tmp/petstore.yaml"
